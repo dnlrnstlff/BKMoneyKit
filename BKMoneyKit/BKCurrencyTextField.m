@@ -113,7 +113,7 @@
 - (void)setNumberValue:(NSDecimalNumber *)numberValue
 {
     if (nil == numberValue || [numberValue compare:[NSDecimalNumber zero]] == NSOrderedSame || [numberValue compare:[NSDecimalNumber notANumber]] == NSOrderedSame) {
-        self.text = nil;
+        self.text = [_numberFormatter stringFromNumber:[NSDecimalNumber zero]];
     } else {
         self.text = [_numberFormatter stringFromNumber:numberValue];
     }
